@@ -1,11 +1,10 @@
--- Create a new database if it doesn't exist
-CREATE DATABASE StudentDB;
 
--- Use the newly created database
+CREATE DATABASE IF NOT EXISTS StudentDB;
+
+
 USE StudentDB;
 
--- Create a new table called StudentData
-CREATE TABLE StudentData(
+CREATE TABLE IF NOT EXISTS StudentData(
     ID INT AUTO_INCREMENT PRIMARY KEY,
     StudentName VARCHAR(255),
     CourseName VARCHAR(255),
@@ -14,7 +13,7 @@ CREATE TABLE StudentData(
     CourseLocation VARCHAR(255)
 );
 
---Inserting Data into the Database
+
 INSERT INTO StudentData (StudentName, CourseName, Instructor, InstructorEmail, CourseLocation) VALUES
 ('John Smith', 'Math 101', 'Prof. Johnson', 'johnson@example.com', 'Room A101'),
 ('Emily Brown', 'History 201', 'Prof. Anderson', 'anderson@example.com', 'Room B215'),
@@ -32,6 +31,5 @@ INSERT INTO StudentData (StudentName, CourseName, Instructor, InstructorEmail, C
 ('David Wilson', 'Biology 101', 'Prof. White', 'white@example.com', 'Room D110'),
 ('Linda Davis', 'English 101', 'Prof. Davis', 'davis@example.com', 'Room B102');
 
---Display the Data Stored in Table
-SELECT * FROM StudentData;
 
+SELECT * FROM StudentData;
